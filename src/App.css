@@ -1,7 +1,37 @@
-
-.page-body {
-  text-align: center;
-  margin: 3rem;
-  height: 110vh;
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');;
 }
 
+*{
+  background-color: #fff;
+}
+header, footer{
+  text-align: center;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif
+}
+header{
+  justify-content: space-between;
+}
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding-right: 50px;
+}
+
+.memehub{
+  height: 75px;
+  width:75px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+footer{
+  justify-content: center;
+}
+
+.page-body{
+  text-align: center;
+}
