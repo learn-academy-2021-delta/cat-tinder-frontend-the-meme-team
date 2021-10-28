@@ -8,7 +8,7 @@ class Header extends Component {
     return (
       <header>
         <NavLink to="/">
-          <img src={memeHub} alt="logo for meme hub" className="memehub"/>
+          <img src={memeHub} alt="meme hub logo" className="memehub"/>
         </NavLink>
         <div className="nav-links">
           <ul>

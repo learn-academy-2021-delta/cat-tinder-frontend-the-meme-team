@@ -1,21 +1,18 @@
 let memes = [
   {
     id: 1,
-    name: "Elias",
-    // age: 5,
-    // enjoys: "sunshine and warm spots"
+    name: "Elias"
+ 
   },
   {
     id: 2,
-    name: "Kelly",
-    // age: 4,
-    // enjoys: "being queen of the dogs"
+    name: "Kelly"
+  
   },
   {
     id: 3,
-    name: "Brandon",
-    // age: 1,
-    // enjoys: "getting all the attention"
+    name: "Brandon"
+
   }
 ]
 export default memes
