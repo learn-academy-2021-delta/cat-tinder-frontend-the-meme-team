@@ -13,4 +13,9 @@ describe ('MemeIndex renders content', () => {
     expect(MemeIndexWrapper.find('h3').length)
     .toEqual(1)
     })
+    it('displays a heading', () => {
+      const memeIndex = shallow(<MemeIndex />)
+      const indexHeading = memeIndex.find("h3")
+      expect(indexHeading.text()).toEqual("I am the Meme Index")
+    })
   })

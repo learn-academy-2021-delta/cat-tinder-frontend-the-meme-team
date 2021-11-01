@@ -4,6 +4,7 @@ import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import MemeIndex from './pages/MemeIndex';
 import Home from './pages/Home';
+import memes from './mockMemes.js'
 
 Enzyme.configure( { adapter: new Adapter() })
 
@@ -40,8 +41,7 @@ describe('When the app renders', ()=> {
     const renderedMemeIndexRoute = 
     renderedApp.find('[path="/memeindex"]')
 
-    expect(renderedMemeIndexRoute.props().component)
-    .toEqual(MemeIndex)
+    expect(renderedMemeIndexRoute.props().render()).toEqual(<MemeIndex memes={memes} />)
 
   })
 })

@@ -14,13 +14,13 @@ import {
   Switch
 } from 'react-router-dom'
 
-import mockMemes from './mockMemes.js'
+import memes from './mockMemes.js'
 
 class App extends Component{
   constructor(props){
     super(props)
     this.state = {
-      memes: mockMemes
+      memes: memes
     }
   }
   render (){
@@ -30,8 +30,18 @@ class App extends Component{
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/memeindex" component={MemeIndex} />
-        <Route path="/memeshow" component={MemeShow} />
+        <Route 
+          path="/memeindex" 
+          render={(props) => 
+          <MemeIndex memes={this.state.memes}/>} 
+        />
+        <Route 
+        path="/memeshow/:id" 
+        render={(props) => {
+          let id = props.match.params.id
+          let meme = this.state.memes.find(m => m.id === +id)
+          return <MemeShow meme={ meme } />
+        }}/>
         <Route path="/memenew" component={MemeNew} />
         <Route path="/memeedit" component={MemeEdit} />
         <Route component={NotFound}/>
