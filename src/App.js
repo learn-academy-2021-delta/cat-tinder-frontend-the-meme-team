@@ -23,6 +23,13 @@ class App extends Component{
       memes: memes
     }
   }
+
+  createMeme = (newMeme) => {
+    console.log(newMeme);
+  }
+
+
+
   render (){
     console.log(this.state.memes);
     return (
@@ -40,10 +47,15 @@ class App extends Component{
         render={(props) => {
           let id = props.match.params.id
           let meme = this.state.memes.find(m => m.id === +id)
-          return <MemeShow meme={ meme } />
+          return <MemeShow meme={ meme } deleteMeme={this.deleteMeme} />
         }}/>
-        <Route path="/memenew" component={MemeNew} />
-        <Route path="/memeedit" component={MemeEdit} />
+        <Route 
+        path="/memenew" 
+        render={(props) => <MemeNew createMeme={this.createMeme}/>}
+        />
+        <Route 
+        path="/memeedit" 
+        component={MemeEdit} />
         <Route component={NotFound}/>
       </Switch>
       <Footer />

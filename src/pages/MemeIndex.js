@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 
 class MemeIndex extends Component {
   render() {
@@ -8,9 +9,7 @@ class MemeIndex extends Component {
         {this.props.memes && this.props.memes.map(meme => {
           return (
           <p key={meme.id}> 
-          <NavLink to={`/memeshow/${meme.id}`}>
-          {meme.name} 
-          </NavLink>
+          <NavLink to={`/memeshow/${meme.id}`}>{meme.name} </NavLink>
           </p>
           )
         })}

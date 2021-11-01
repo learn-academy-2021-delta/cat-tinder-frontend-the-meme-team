@@ -2,8 +2,8 @@ let memes = [
   {
     id: 1,
     name: "Elias",
-    description: "1",
-    url: ""
+    description: "I am the description for Elias Meme",
+    url: "http://abcd.com"
  
   },
   {
