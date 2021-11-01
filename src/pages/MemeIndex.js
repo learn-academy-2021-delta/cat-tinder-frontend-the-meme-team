@@ -5,6 +5,15 @@ class MemeIndex extends Component {
     return (
       <>
         <h3>I am the Meme Index</h3>
+        {this.props.memes && this.props.memes.map(meme => {
+          return (
+          <p key={meme.id}> 
+          <NavLink to={`/memeshow/${meme.id}`}>
+          {meme.name} 
+          </NavLink>
+          </p>
+          )
+        })}
       </>
     )
   }
