@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-// import { Button, Card, CardTitle, CardText } from 'reactstrap'
-// import { NavLink } from 'react-router-dom'
+
 
 class MemeShow extends Component {
   render() {
-    // let {meme} = this.props
+    
     return (
       <>
         <h3>I am the Meme Show</h3>
