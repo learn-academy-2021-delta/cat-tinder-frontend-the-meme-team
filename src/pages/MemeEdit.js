@@ -4,7 +4,7 @@ class MemeEdit extends Component {
   render() {
     return (
       <>
-        <h3>I am the Meme Edit</h3>
+        <h3>Edit Your Meme</h3>
       </>
     )
   }

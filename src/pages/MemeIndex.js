@@ -1,19 +1,30 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
+import { Card, Button, CardTitle, Row, Col } from 'reactstrap'
 
 class MemeIndex extends Component {
   render() {
+    const {memes} = this.props
     return (
-      <>
-        <h3>I am the Meme Index</h3>
-        {this.props.memes && this.props.memes.map(meme => {
+      <div className="page-body">
+        <h3>Meet the Memes</h3>
+        <div className="index-cards">
+        {/* {this.props.memes && this.props.memes.map(meme => { */}
+        {memes && memes.map(meme => {
           return (
-          <p key={meme.id}> 
-          <NavLink to={`/memeshow/${meme.id}`}>{meme.name} </NavLink>
-          </p>
-          )
+            <Row key={meme.id}> 
+            <Col sm="6">
+            <Card body>
+              <CardTitle tag="h4">{meme.name}</CardTitle>
+            <NavLink to={`/memeshow/${meme.id}`}><Button>Meet Your Meme</Button></NavLink>
+            </Card>
+            </Col>
+            </Row>
+            )
+
         })}
-      </>
+        </div>  
+        </div>
     )
   }
 }
