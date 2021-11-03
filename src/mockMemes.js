@@ -1,16 +1,20 @@
+
+
 let memes = [
   {
     id: 1,
     name: "Elias",
     description: "I am the description for Elias Meme",
-    url: "http://abcd.com"
+    url: "http://abcd.com", 
  
   },
   {
     id: 2,
     name: "Kelly",
     description: "2",
-    url: ""
+    url: "",
+
+    
   
   },
   {

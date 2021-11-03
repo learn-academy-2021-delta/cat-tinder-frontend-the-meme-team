@@ -13,21 +13,41 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
+import './App.css'
 
-import memes from './mockMemes.js'
 
 class App extends Component{
   constructor(props){
     super(props)
     this.state = {
-      memes: memes
+      memes: []
     }
   }
 
-  createMeme = (newMeme) => {
-    console.log(newMeme);
+  componentDidMount(){
+    this.readMeme()
   }
 
+  readMeme = () => {
+    fetch("http://localhost:3000/memes")
+    .then(response => response.json())
+    .then(memeArray => this.setState({memes: memeArray}))
+    .catch(errors => (console.log(errors)))
+  }
+
+  createMeme = (newMeme) => {
+    fetch("http://localhost:3000/memes", {
+      body: JSON.stringify(newMeme),
+      headers: {
+        "Content-Type" : "application/json"
+      },
+      method: "POST"
+    })
+    .then(response => response.json())
+    .then(payload => this.readMeme())
+    .catch(errors => (console.log(errors)))
+  }
+ 
 
 
   render (){
